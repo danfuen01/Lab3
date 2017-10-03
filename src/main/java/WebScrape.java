@@ -14,7 +14,7 @@ public class WebScrape {
     public static void main(String[] args) {
 
 
-        int princeCount = 0;
+        int wordCount = 0;
 
         String s = urlToString("http://erdani.com/tdpl/hamlet.txt");
         String s1 = urlToString("https://www.bls.gov/tus/charts/chart9.txt");
@@ -29,12 +29,14 @@ public class WebScrape {
         System.out.println(count2);
 
 
-        if (s.contains("Prince")) {
-            princeCount++;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                wordCount++;
+            }
         }
 
-        System.out.println(princeCount);
-
+        System.out.println(wordCount);
 
 
     }
